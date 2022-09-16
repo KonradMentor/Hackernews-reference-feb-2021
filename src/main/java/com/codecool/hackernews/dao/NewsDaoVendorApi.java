@@ -43,8 +43,7 @@ public class NewsDaoVendorApi implements NewsDao {
 
     @Override
     public List<News> read(int page) {
-        List<News> newsList = new ArrayList<>();
-
+        List<News> newsList;
         String newsJSON = getNewsJSONFromApi(page);
 
         Type newsListType = new TypeToken<List<News>>() {}.getType();

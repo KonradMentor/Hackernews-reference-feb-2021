@@ -5,7 +5,7 @@ function fetchData(route) {
     if (route.startsWith("?")) {
         route = window.location.pathname + route;
     }
-    fetch(BASE_URL + "/api" + route)
+    fetch(BASE_URL + "/api/" + route)
         .then(response => response.json())
         .then(renderNews)
         .catch(error => {
@@ -72,7 +72,7 @@ function getRoute() {
 
 (function () {
     bindEventListeners();
-    let route = "/top?page=1";
+    let route = "top?page=1";
     fetchData(route);
 })();
 
